@@ -23,11 +23,11 @@ $("#css2 button").click(function() {
 });
 
 $("#attr1 button").click(function() {
-  console.log("visit baidu?");
+  console.log($("#attr1 a").attr("href"));
 });
 
 $("#attr2 button").click(function() {
-  $('#attr2 p').attr('p','visit baidu');
+  $('#attr2 a').attr('href','http://www.google.com');
 
 });
 
@@ -60,5 +60,54 @@ $("#form2 button").click(function() {
 // handle the form events here
 
 $("#formEvents form").submit(function(event) {
+
+});
+
+$('#animate1').mouseover(function(){
+  $('#animate1 img').animate({
+    width:"70%",
+
+  }, 1000, function() {
+    // Animation complete.
+  });
+});
+
+
+$('#mouse img').mouseover(function() {
+  $( "#mouse img" ).css( "width","50%" );
+});
+
+$('#mouse img').mouseout(function() {
+  $( "#mouse img" ).css( "width","20%" );
+});
+
+
+$( "#formEvents button" ).click(function( event ) {
+  event.preventDefault();
+  console.log($( "#inputEmail3").val());
+  console.log($( "#inputPassword3").val());
+  console.log($( "#cb").val());
+
+});
+
+$( "#animate2 img" ).dblclick(function() {
+
+   $('#animate1 img').animate({
+    left: '+=30',
+
+
+  }, 1000, function() {
+    // Animation complete.
+    console.log("$$4");
+  });
+});
+
+//to do
+
+$('#animate3 img').click(function() {
+  console.log("%^%^%^");
+  $('#animate3 img').fadeIn({queue: false, duration: 'slow'});
+  $('#animate3 img').animate(
+    { top: "-10px" }, 'slow');
 
 });
