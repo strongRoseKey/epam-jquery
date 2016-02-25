@@ -71,6 +71,14 @@ $('#animate1').mouseover(function(){
     // Animation complete.
   });
 });
+$('#animate1').mouseout(function(){
+  $('#animate1 img').animate({
+    width:"20%",
+
+  }, 1000, function() {
+    // Animation complete.
+  });
+});
 
 
 $('#mouse img').mouseover(function() {
@@ -90,24 +98,41 @@ $( "#formEvents button" ).click(function( event ) {
 
 });
 
-$( "#animate2 img" ).dblclick(function() {
-
-   $('#animate1 img').animate({
-    left: '+=30',
-
-
-  }, 1000, function() {
-    // Animation complete.
-    console.log("$$4");
-  });
+$( "#animate2 img" ).dblclick(function(event){
+  if($( "#animate2 img" ).css("margin-left") == "100px"){
+    $( "#animate2 img" ).animate({
+      "margin-left":"0px",
+    },300,"swing");
+  }else{
+    $( "#animate2 img" ).animate({
+      "margin-left":"100px",
+    },300,"swing");
+  }
 });
+// dblclick(function() {
+
+//    $('#animate1 img').animate({
+//     left: '+=30',
+
+
+//   }, 1000, function() {
+//     // Animation complete.
+//     console.log("$$4");
+//   });
+// });
+
+
 
 //to do
 
 $('#animate3 img').click(function() {
-  console.log("%^%^%^");
-  $('#animate3 img').fadeIn({queue: false, duration: 'slow'});
-  $('#animate3 img').animate(
+  $('#mouseimg').fadeOut( 'slow',function(){
+    $('#mouseimg').animate(
     { top: "-10px" }, 'slow');
+  });
+  $('#catimg').fadeIn( 'slow',function(){
+    $('#catimg').animate(
+    { top: "-10px" }, 'slow');
+  });
 
 });
